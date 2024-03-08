@@ -14,14 +14,19 @@
 <script>
   function show(event) {
     event.preventDefault();
-    let name = document.getElementById("name").value;
-    let phone = document.getElementById("phone").value;
+    let name = document.getElementById("name").value.trim();
+    let phone = document.getElementById("phone").value.trim();
     let male = document.getElementById("male");
     let female = document.getElementById("female");
     let python = document.getElementById("python");
     let java = document.getElementById("java");
     let js = document.getElementById("js");
     let msg = document.getElementById("msg");
+
+    if (name === "" || phone === "") {
+      alert("Please enter your name and phone number.");
+      return;
+    }
 
     let gender = "";
     if (male.checked) gender = "male";
